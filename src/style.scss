@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+}
+
+$dark-gray: #474747;
+$light-gray: #868686;
+$white: #fff;
+$off-blue: #5bc3ff;
+$accept-green: #1caa00;
+
+@mixin CenterChildren() {
+  display: grid;
+  place-items: center;
+}
+
+#content {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header {
+  background-color: $dark-gray;
+  @include CenterChildren();
+  color: $white;
+  font-size: 1rem;
+  padding: 1rem 0;
+}
+
+.body {
+  background-color: $white;
+  @include CenterChildren();
+  grid-template-rows: auto 1fr;
+}
+
+.footer {
+  background-color: $dark-gray;
+  @include CenterChildren();
+  font-size: 1rem;
+  font-weight: 600;
+  color: $white;
+  padding: .5rem 0;
+}
+
+.form {
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.form > * {
+  padding: .3rem .5rem;
+  font-size: 1.2rem;
+  border-radius: 15px;
+  border: solid 2px $dark-gray;
+  outline: none;
+  transition: all 300ms;
+}
+
+.form__title:focus {
+  border: solid 2px $off-blue;
+}
+
+.form__title:focus::placeholder {
+  transition: all 300ms;
+  color: transparent;
+}
+
+.form__search-btn {
+ cursor: pointer; 
+ color: $white;
+ background-color: $dark-gray;
+}
+
+.form__search-btn:hover {
+  color: $dark-gray;
+  border: solid 2px $off-blue;
+  background-color: $off-blue;
+} 
+
+.card-container {
+  width: 350px;
+  align-self: start;
+  background-color: $dark-gray;
+  border: solid 2px transparent;
+  border-radius: 15px;
+  padding: 2rem;
+}
+
+.weather__card {
+  background-color: $dark-gray;
+  @include CenterChildren();
+  color: $white;
+  gap: 2rem;
+}
+
+.weather__location {
+  font-size: 1.8em;
+  font-weight: 900;
+}
+
+.weather__type {
+  font-size: 1.5rem;
+
+}
+
+.weather__temperature {
+  font-size: 1.2rem;
+
+}
+
+.weather__feels-like {
+  font-size: 1.2rem;
+
+}
+
+.weather__humidity {
+  font-size: 1.2rem;
+
+}
+
+
